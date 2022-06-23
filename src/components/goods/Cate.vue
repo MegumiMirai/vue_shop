@@ -29,7 +29,7 @@
         class="treeTable"
       >
         <!-- 是否有效插槽 -->
-        <template slot="isok" scope="scope">
+        <template slot-scope="isok" scope="scope">
           <i
             class="el-icon-circle-close"
             style="color: red"
@@ -38,7 +38,7 @@
           <i class="el-icon-success" style="color: lightgreen" v-else></i>
         </template>
         <!-- 排序插槽 -->
-        <template slot="order" scope="scope">
+        <template slot-scope="order" scope="scope">
           <el-tag v-if="scope.row.cat_level === 0" size="mini">一级</el-tag>
           <el-tag
             type="danger"
@@ -49,7 +49,7 @@
           <el-tag type="warning" v-else size="mini">三级</el-tag>
         </template>
         <!-- 操作插槽 -->
-        <template slot="opt" scope="scope">
+        <template slot-scope="opt" scope="scope">
           <el-button
             type="primary"
             icon="el-icon-edit"
@@ -109,7 +109,7 @@
             ></el-cascader>
           </el-form-item>
         </el-form>
-        <span slot="footer" class="dialog-footer">
+        <span>
           <el-button @click="addCateDialogVisible = false">取 消</el-button>
           <el-button type="primary" @click="addCate">确 定</el-button>
         </span>
@@ -132,7 +132,7 @@
             <el-input v-model="editCateForm.cat_name"></el-input>
           </el-form-item>
         </el-form>
-        <span slot="footer" class="dialog-footer">
+        <span class="dialog-footer">
           <el-button @click="editCateDialogVisible = false">取 消</el-button>
           <el-button type="primary" @click="editCate">确 定</el-button>
         </span>
